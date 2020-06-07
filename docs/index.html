@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Online PDF converter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-12 heading">
+            <h2>HTML - PDF Converter</h2>
+            <span>Convert your HTML based template to PDF file</span>
+        </div>
+    </div>
+    <div class="row heading">
+        <div class="col-12">
+            <h2>How To Use:</h2>
+        </div>
+        <div class="col-12">
+            <span>You can generate your PDF file here by entering your HTML content and see it's preview</span>
+        </div>
+        <div class="col-12">
+            <span><strong>Or</strong> you can use the api for generating pdf from html content by sending</span>
+        </div>
+        <div class="col-12">
+            <code>curl -d "html=yourHTML" https://online-pdf-generator.herokuapp.com/file</code>
+        </div>
+        <div class="col-12">
+            <span> you will get <code>base64 encoded</code> binary content for the pdf file
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row content-row">
+            <div class="col-5 editor">
+                <label>HTML</label>
+                <textarea class="form-control" oninput="convert()" id="editor"></textarea>
+            </div>
+            <div class="col-7">
+                <label>PDF Preview</label>
+                <iframe id="viewer" class="viewer">
+
+                </iframe>
+            </div>
+        </div>
+        <div class="row actions">
+            <button class="btn btn-success" onclick="downloadFile()">Download PDF File</button>
+        </div>
+        <div class="row footer heading">
+            <div class="col-12">
+            This is a fre opensource tool to be used
+            </div>
+            <div class="col-12">
+                you can contact me for issues and change requests through the repo: <a href="https://github.com/MarwanYouness/pdf-converter">https://github.com/MarwanYouness/pdf-converter</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
